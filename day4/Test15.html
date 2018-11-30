@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//날짜시간을 사용할때 date 객체
+		function getTime(){
+			var now = new Date();
+			
+			var time = now.getFullYear()+"년"+(now.getMonth()+1)+"월"+now.getDate()+"일";
+			console.log(time);
+
+			var div = document.getElementById("myDiv1");
+			console.dir(div);
+			div.innerHTML="<h1>"+time+"</h1>";
+
+		}
+
+
+	</script>
+	<style type="text/css">
+		#myDiv1{
+			width: 250px;
+			height: 250px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="myDiv1"></div>
+	<input type="button" value="지금시간은?" onclick="getTime()">
+
+</body>
+</html>

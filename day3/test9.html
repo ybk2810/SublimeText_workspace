@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function cal(){
+			//id가 txt1인 input 엘리먼트 객체를 얻어오기
+			var txt1 = document.getElementById("txt1");
+			var txt2 = document.getElementById("txt2");
+			var data1 = parseInt(txt1.value);
+			var data2 = parseInt(txt2.value);
+			console.log(data1+data2);
+			result.value= (data1+data2);
+		}
+
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt1">
+	+
+	<input type="text" name="" id="txt2">
+	<input type="button" value="=" onclick="cal();">
+	<input type="text" name="" id="result">
+</body>
+</html>

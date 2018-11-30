@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#content{
+			width: 1000px;
+			height: 600px;
+			background-color: pink;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		img{
+			width: 180px;
+			height: 280px;
+		}
+
+		#movie{
+			width: 200px;
+			height: 300px;
+			border: 2px solid red;
+			position: absolute;
+			left: 50px;
+			top: 180px;
+			padding: 20px;
+			background-color: #ffffff;
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// $(function(){
+		// 	$("input#btn1").on("click",function(){
+		// 		setInterval(moveImg,500);
+		// 	});
+		// });
+
+		function showdiv(){
+			$("#movie").show();
+		}
+
+		function hidediv(){
+			$("#movie").hide();
+		}
+	</script>
+</head>
+<body>
+	<div id="movie">
+		<div>
+			<a href="javascript: hidediv()">닫기</a>
+			<img src="../images/movie_image1.jpg" alt="앤트맨">
+		</div>
+	</div>
+	
+	<div id="content">
+		<h1>c쥐V</h1>
+		<p>저희 극장은 멀티플렉스 극장이지만 1개의 영화만 상영합니다.</p>
+		<a href="javascript:showdiv()">영화보기</a>
+	</div>
+</body>
+</html>

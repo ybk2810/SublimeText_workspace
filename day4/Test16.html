@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//문자열 객체
+		var str1 = "ABCDEFGH";
+		var str2 = new String("ABCDEFGH");
+
+		console.log(str1);
+		console.log(str2);
+
+		//2번째부터 3자만
+		console.log(str2.substr(2,3));
+
+		//a글자의 위치가 몇번째인지 구하기
+		console.log(str2.indexOf('A'));
+
+		//자바스크립트함수 중첩가능
+		var email = "dagda@gmail.com";
+		//이메일의 아이디만 추출하기
+		console.log(email.substring(0,email.indexOf('@')));
+
+		var friendList = "aaa,bbb,ccc,ddd,eee";
+		var fList = friendList.split(",");
+		for (var i = 0; i < fList.length; i++) {
+			console.log(fList[i])
+		}
+
+
+		
+		//원주율
+		console.log("원주율:"+Math.PI);
+
+		//0부터 1사이의 실수
+		console.log("0부터1사이의 실수"+Math.random());
+		console.log("절대값:"+Math.abs(-9));
+		console.log("제곱근:"+Math.sqrt(4));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

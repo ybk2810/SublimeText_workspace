@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#container{
+			width: 1000px
+			margin: auto;
+		}
+		#header{
+			background-color: black;
+			color: gold;
+			height: 200;
+			display:inline;
+		}
+		img{
+			width: 1000px;
+		}
+		#side1{
+			background: red;
+			width: 200px;
+			height: 600px;
+			float: left;
+		}
+		#contents{
+			background: silver;
+			width: 600px;
+			height: 600px;
+			float: left;
+		}
+		#side2{
+			background: blue;
+			width: 200px;
+			height: 600px;
+			float: left;
+		}
+		#menu{
+			border: 1px solid black;
+			width: 1000px;
+			background: orange
+			text-decoration: none;
+			text-align: center;
+
+		}
+		.button{
+			text-decoration: none;
+			text-align: center;
+			font-size: 20px;
+			font-family: "나눔고딕";
+			padding: 10px 10px;
+			backround: silver;
+		}
+		.button:hover{
+			background: yellow;
+		}
+		.button:ACTIVE{
+			background: red;
+			color: blue;
+			position: relative;
+			top:2px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="logo">
+				<img src="../images/naver.PNG" alt="네이버로고">
+			</div>
+			<div id="menu">
+				<a href="#" class="button">뉴스</a>
+				<a href="#" class="button">메일</a>
+				<a href="#" class="button">지도</a>
+				<a href="#" class="button">로그인</a>
+			</div>
+		</div>
+		<div id="side1">
+			<!-- <img src="../images/movie_image1.jpg" alt=""> -->
+
+		</div>
+		
+		<div id="contents">
+			<h1>메인컨텐츠</h1>
+			<ul>
+				<li>기사1</li>
+				<li>기사2</li>
+				<li>기사3</li>
+				<li>기사4</li>
+			</ul>
+		</div>
+
+		
+		
+		<div id="side2">
+			<!-- <img src="../images/movie_image2.jpg" alt=""> -->
+		</div>
+	</div>
+</body>
+</html>

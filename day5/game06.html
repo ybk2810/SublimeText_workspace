@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	*{
+		margin: auto;
+		padding: 0px;
+	}
+		canvas{
+			background: #aaaaaa;
+		}
+	</style>
+	<script type="text/javascript">
+		//이미지 객체
+		var bgImg = new Image();
+		bgImg.src = "../images/bg.jpg";
+
+		var rabbit1 = new Image();
+		rabbit1.src = "../images/rabbit1.png";
+
+		var rabbit2 = new Image();
+		rabbit2.src = "../images/rabbit2.png";
+
+		var holeImg = new Image();
+		holeImg.src = "../images/hole.png";
+
+		//토끼 좌표 객체
+		var rabbitX = 100;
+		var rabbitY = 100;
+
+		// 조준경 이미지 객체
+		var sniperImg = new Image();
+		sniperImg.src = "../images/snipe.png";
+
+		// 조준경 x,y 객체
+		var snipeX = 100;
+		var snipeY = 100;
+
+		// 구멍 x,y 객체
+		var holeX = 0;
+		var holeY = 0;
+
+		// 구멍 배열 선언
+		var holeArray = [];
+
+		// 배경 음악 객체
+		var bgMusic = new Audio("../sounds/backsound.mp3");
+
+		// 총성 객체
+		var fireSound = new Audio("../sounds/fire.wav");
+
+		// 맞았을 때 소리 객체
+		var screamSound = new Audio("../sounds/scream.wav");
+		
+		var ctx;
+		var counter = 0;
+		var distance;
+
+		// 익명 함수
+		window.onload = function() {
+			// console.log("ㅎㅎㅎ");
+			var canvas = document.getElementById("myCanvas");
+			ctx = canvas.getContext("2d");
+			
+			var body = document.body;
+			console.dir(body);
+			body.onkeydown=moveRabbit;
+
+			canvas.onmousemove = moveSnipe;
+			canvas.onmousedown = fire;
+			// canvas.onmousedown = pythagoras;
+
+			drawScreen();
+		}
+
+		function drawScreen(){
+			counter++;
+			// console.log(counter);
+
+			//ctx.drawImage(그릴객체,x,y,너비,높이);
+			ctx.drawImage(bgImg,0,0,800,600);
+			if(counter%2==0){
+				ctx.drawImage(rabbit1,rabbitX-50,rabbitY-50,100,100);
+			}else if(counter%2==1){
+				ctx.drawImage(rabbit2,rabbitX-50,rabbitY-50,100,100);
+			}
+
+			//배열에 꺼내서 한개씩 구멍 그리기
+			for (var i = 0; i < holeArray.length; i++) {
+				var h = holeArray[i];
+				ctx.drawImage(holeImg,rabbitX-h.x-5,rabbitY-h.y-5,10,10);
+			}
+
+			// 주준경 그리기
+			ctx.drawImage(sniperImg,snipeX-50,snipeY-50,100,100);
+			
+
+			// 구멍 그리기
+			// ctx.drawImage(holeImg,holeX-5,holeY-5,10,10);
+
+			//0.5초마다 한번씩 drawScreen함수를 실행해
+			setTimeout(drawScreen,100);
+		}
+
+		function startMusic(){
+			console.log("음악 나오는중");
+			bgMusic.play();
+		}
+
+		function stopMusic(){
+			console.log("음악중지");
+			bgMusic.currentTime=0;
+			bgMusic.pause();
+		}
+
+		function moveRabbit(event){
+			console.log(event);
+			if(event.keyCode==37)rabbitX -= 10;
+			else if(event.keyCode==38)rabbitY -= 10;
+			else if(event.keyCode==39)rabbitX += 10;
+			else if(event.keyCode==40)rabbitY += 10;
+			//가출방지용 코드
+			if(rabbitX>=700)rabbitX=700;
+			if(rabbitX<=0)rabbitX=0;
+			if(rabbitY>=500)rabbitY=500;
+			if(rabbitY<=0)rabbitY=0;
+		}
+
+		function moveSnipe(event){
+			// console.dir(event);
+			snipeX = event.pageX;
+			snipeY = event.pageY;
+		}
+
+		function fire(event){
+			console.dir(event);
+			fireSound.play();
+
+			// 토끼와의 거리
+			var dis = pythagoras(event.pageX, event.pageY, rabbitX, rabbitY);
+			console.log(dis);
+			if(dis<=50){
+				// console.log("맞음");
+				holeX = event.pageX;
+				holeY = event.pageY;
+
+				// var 객체명={property:value, property:value};
+				// 총알객체
+				var h={
+					x: rabbitX-event.pageX,
+					y: rabbitY-event.pageY
+				}
+
+				// 총알 배열에 담기
+				holeArray.push(h);
+
+				setTimeout(function(){
+					screamSound.currentTime=0;
+					screamSound.play();
+				}, 500)
+
+				// rabbitX = Math.floor(Math.random()*700);
+				// rabbitY = Math.floor(Math.random()*500);
+			} else{
+				// console.log("안맞음");
+			}
+		}
+
+		function pythagoras(x1, y1, x2, y2){
+			return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="800" height="600"></canvas>
+	<br/>
+	<input type="button" value="배경음악 ON" onclick="startMusic();">
+	<input type="button" value="배경음악 OFF" onclick="stopMusic();">
+	<br/>
+	<!-- &nbsp&nbsp&nbsp&nbsp<input type="button" value="▲" onclick="moveRabbit('up');"><br/>
+	<input type="button" value="◀" onclick="moveRabbit('left');">&nbsp&nbsp
+	<input type="button" value="▶" onclick="moveRabbit('right');"><br/>
+	&nbsp&nbsp&nbsp&nbsp<input type="button" value="▼" onclick="moveRabbit('down');"><br/> -->
+</body>
+</html>

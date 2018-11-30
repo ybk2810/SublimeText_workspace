@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var n1 = prompt("얼마까지 누적할까요?");
+		var value = parseInt(n1);
+
+		function cum(v){
+			var j = 0;
+			for (var i = 0; i <= v; i++) {
+				j+=i;
+			}
+			return j;
+		}
+		var data = cum(value);
+		console.log("1부터 " + value + "까지의 합은 " + data + "입니다.");
+	</script>
+</head>
+<body>
+	<!-- 
+	얼마까지 누적할까요?
+	100
+	1부터 100까지의 누적합은 5050입니다. -->
+	
+</body>
+</html>

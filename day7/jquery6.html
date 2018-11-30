@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>버튼으로 사진보이기/감추기</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("img").css("width","300px").css("height","300px");
+			$("input[value='보이기']").on("click",function(){
+				$("img").show();
+			})
+			$("input[value='감추기']").on("click",function(){
+				$("img").hide();
+			})
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="보이기" id="show">
+	<input type="button" value="감추기" id="hide">
+	<img src="../images/BABY.jpg" style="display: none;" alt="베컴딸" id="img">
+
+</body>
+</html>

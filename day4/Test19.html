@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 350px;
+		}
+	</style>
+	<script type="text/javascript">
+		function viewResult(){
+
+		// 1.이미지가져오기
+		document.getElementById("img");
+		// 2.선택한영화제목가져오기
+		document.getElementById("m1");
+		// console.dir(m1);
+		if(m1.checked){
+		// 3.해당이미지를src에지정
+		img.src = "../images/movie_image1.jpg";
+		}else if(m2.checked){
+			img.src = "../images/2.jpg";
+		}else if(m3.checked){
+			img.src = "../images/3.jpg";
+		}else if(m4.checked){
+			img.src = "../images/4.jpg";
+		}else if(m5.checked){
+			img.src = "../images/5.jpg";
+		}
+
+		console.log(document.frm.movie[0].checked);
+		}
+		console.dir(document);
+
+
+	</script>
+</head>
+<body>
+	<h2>매달 마지막 수요일은 문화의 날</h2>
+	<h2>마음에 드는 영화를 선택하세요</h2>
+
+	<form action="" name="frm">	
+		<input type="radio" name="movie" id="m1">앤트맨
+		<input type="radio" name="movie" id="m2">마녀
+		<input type="radio" name="movie" id="m3">변산
+		<input type="radio" name="movie" id="m4">탐정
+		<input type="radio" name="movie" id="m5">허스토리
+		<input type="button" value="결과보기" onclick="viewResult()">
+	</form>
+	<img src="" alt="" id="img">
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>사진을 찍어드려요</title>
+	<style type="text/css">
+		div{
+			width: 250px;
+			height: 200px;
+			margin: auto;
+		}
+		img{
+			width: 150px;
+			height: 100px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function showPhoto(){
+			var img = document.getElementById("myPhoto");
+			img.src="../images/pig1.jpg"
+		}
+	</script>
+</head>
+<body>
+	
+
+	<div id="myDiv">
+		<h1>당신의 사진을 찍어드립니다.</h1>
+		<h3>가까이 다가 오시면 더운 예쁜 사진이 나와요^^</h3>
+		<img src="../images/camera.jpg" id="myPhoto" alr="">
+		<input type="button" value="찰칵" onclick="showPhoto()">
+	</div>
+</body>
+</html>

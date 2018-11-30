@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function checkForm(x){
+			console.dir(x);
+			console.log(x.form[0].value);
+
+			var id = x.form[0].value;
+			var pw = x.form[1].value;
+			var repw = x.form[2].value;
+			var email = x.form[3].value;
+
+			if(id==''){
+				alert("아이디를 입력하세요--");
+				x.form[0].focus();
+				return;//실행하다 만나면 멈춤
+			} else if(pw==''){
+				alert("패스워드를 입력하세요--");
+				x.form[1].focus();
+				return;
+			} else if(repw==''){
+				alert("패스워드확인을 입력하세요--");
+				x.form[2].focus();
+				return;
+			} else if(email==''){
+				alert("emall를 입력하세요--");
+				x.form[3].focus();
+				return;
+			} else if(pw!=repw){
+				alert("비번이 틀렸습니다.");
+				x.form[1].value='';
+				x.form[2].value='';
+				x.form[1].focus();
+				return;
+			}
+
+			//이동주소
+			x.form.action="ok.html";
+
+			//get,post방식
+			//get: 간단 쉬움, 25자 한계, 주소창에 남음
+			//post: body태그안에 감춰서 보내는것, password와 같은 외부노출을 꺼리는 값들을 위한 방법
+			x.form.method="get";
+
+			//전달
+			x.form.submit();
+		}
+	</script>
+</head>
+<body>
+	<form action="regOK.html" id="frm">
+		<table>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="userid" id=""></td>
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td><input type="text" name="userpwd" id=""></td>
+			</tr>
+			<tr>
+				<th>패스워드확인</th>
+				<td><input type="text" name="userrepwd" id=""></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><input type="text" name="useremail" id=""></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<input type="button" value="전송" onclick="checkForm(this);">
+			</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

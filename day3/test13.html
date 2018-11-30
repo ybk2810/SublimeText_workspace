@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function getImageData(){
+			var img = document.getElementById("movie1");
+			console.log(img);
+			console.dir(img);
+			console.log(img.src);
+			img.src="../images/movie_image2.jpg";
+		}
+		function changeImage(){
+			var img = document.getElementById("movie1");
+			img.src="../images/movie_image1.jpg";
+		}
+	</script>
+	<style type="text/css">
+		img{
+			widows: 300px;
+			height: 350px;
+		}
+		#myDiv{
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<img src="../images/movie_image1.jpg" alt="앤트맨" id="movie1">
+
+	<input type="text" name="" id="text">
+	<input type="button" value="이미지변경" onclick="getImageData();">
+	<div id="myDiv" onmouseover="getImageData();" onmouseout="changeImage();"></div>
+</body>
+</html>

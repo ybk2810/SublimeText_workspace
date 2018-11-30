@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn4").on("click",function(){
+				$("#answer").show();//화면에 보여주기
+				$("#wrong").hide();//화면에서 감추기
+			})
+			$("#btn1,#btn2,#btn3,#btn5").on("click",function(){// ,를 찍어서 여러개에 같은효과 적용가능
+				$("#answer").hide();
+				$("#wrong").show();
+			})
+		});
+	</script>
+</head>
+<body>
+	<h2>퀴즈</h2>
+
+	<div>조선시대 장군, 명량, 거북선하면 떠오르는 인물은?</div>
+
+	<div id="aa">1.권율 2.임꺽정 3.반장 4.이순신 5.세종대왕</div>
+
+	<input type="button" value="1번" id="btn1">
+	<input type="button" value="2번" id="btn2">
+	<input type="button" value="3번" id="btn3">
+	<input type="button" value="4번" id="btn4">
+	<input type="button" value="5번" id="btn5">
+
+	<div id="answer" style="display:none;">정답:이순신</div>
+	<div id="wrong" style="display: none;">
+		<img src="../images/wrong.jpg" alt="땡">
+	</div>
+
+</body>
+</html>

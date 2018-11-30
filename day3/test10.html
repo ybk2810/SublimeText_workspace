@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function cal(){
+			var txt1 = document.getElementById("txt1").value;
+			var txt2 = document.getElementById("txt2").value;
+			var oper = document.getElementById("oper").value;
+			var result = document.getElementById("result");
+			var data = eval(txt1+oper+txt2);
+			console.log(data);
+			// data = parseInt(data);
+
+			result.value= data;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt1">
+	<input type="text" name="" id="oper" size="3">
+	<input type="text" name="" id="txt2">
+	<input type="button" value="=" onclick="cal();">
+	<input type="text" name="" id="result">
+</body>
+</html>

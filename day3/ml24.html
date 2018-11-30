@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table,td,th{
+			border: 1px solid black;
+		}
+		th{
+			font-size: 15px;
+			background: #e0bbd8;
+		}
+		table{
+			text-align: center;
+			width: 100%;
+			border-collapse: collapse;
+		}
+		tr{
+			font-size: 12px;
+			cursor: pointer;
+		}
+		td{
+			height: 24px;
+		}
+		#id{
+			width: 10%
+		}
+		#pw{
+			width: 10%
+		}
+		#name{
+			width: 20%
+		}
+		#email{
+			width: 35%
+		}
+		#addrs{
+			width: 25%
+		}
+		.odd{
+			background-color: #ff3ffd;
+		}
+		th:hover{
+			cursor:default;
+		}
+		tr:hover{
+			color:#ffffff;
+			background: #00ccff;
+			font-weight: bold;
+		}
+		/*선택자
+		1.tag
+		2.하위선택자 ol li
+		ol>li ol을 부모로 하는 직계 자식 li
+		#id
+		.class
+		유사선택자: active, hover;*/
+
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th id="id">ID</th>
+			<th id="pw">PW</th>
+			<th id="name">NAME</th>
+			<th id="email">EMALE</th>
+			<th id="addrs">ADDRS</th>
+			<tr class='odd'>
+				<td>aaa</td>
+				<td>pwd1</td>
+				<td>아이언맨</td>
+				<td>ironman@gmail.com</td>
+				<td>절벽위</td>
+			</tr>
+			<tr>
+				<td>bbb</td>
+				<td>pwd2</td>
+				<td>토르</td>
+				<td>thur@gmail.com</td>
+				<td>아스가르드</td>
+			</tr>
+			<tr class='odd'>
+				<td>ccc</td>
+				<td>pwd3</td>
+				<td>스파이더맨</td>
+				<td>spiderman@gmail.com</td>
+				<td>슈퍼맨 아랫집</td>
+			</tr>
+			<tr>
+				<td>ddd</td>
+				<td>pwd4</td>
+				<td>앤트맨</td>
+				<td>antman@gmail.com</td>
+				<td>헐크옆집</td>
+			</tr>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			/*position: relative;absolute랑 다르게 block 형태로 그대로 움직이는거*/
+			/*left: 30px;*/
+			/*top: 30px;*/
+
+		}
+		#div2{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+		}
+		#div1:hover{
+			position:relative;
+			top:100px;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>Relative Position</h1>
+
+	<p>
+		박스의 위치를 지정할 때 사용할 수 있는 속성으로
+		top,right,left,bottom 이 있다.
+	</p>
+	<p>
+		상대 위치 지정방식으로 박스가 배치될 경우
+		다른 블럭요소배치에 영향을 주지 않고 배치된다.
+	</p>
+
+	<hr />
+
+	<div id="div1">
+		<img src="../images/movie_image1.jpg" width="300px" height="450px" alt="">
+	</div>
+	<div id="div2">
+		<img src="../images/movie_image2.jpg" width="300px" height="450px" alt="">
+	</div>
+
+
+
+</body>
+</html>

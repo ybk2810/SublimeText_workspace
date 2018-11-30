@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>메소드체인방식과 JSON방식</title>
+	<style type="text/css">
+		.myStyle{
+			width: 300px;
+			height: 200px;
+			color: skyblue;
+			background-color: red;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){ 
+		//1번 버튼을 누르면 box1의 글자색을 red
+		//배경을 초록색 너비 200 높이 200
+			$("#btn1").on("click",function(){
+				$("#box1").css({
+					"color":"red",
+					"backgroundColor":"blue",
+					"width":"200px",
+					"height":"200px"
+				})
+			})//JSON방식
+
+			// $("#btn1").on("click",function(){
+			// 	$("#box1").css("color","red").css("backgroundColor","green").css("width","200px").css("height","200px");
+			// })
+
+		//2번 버튼을 누르면 사용자에게 어떤색을 쓸것인지
+		//물어본후에 box1의 배경색으로 지정
+			$("#btn2").on("click",function(){
+					var bg = prompt("어떤색쓸래");
+					$("#box1").css("backgroundColor",bg);
+			})
+		
+
+		//3번 버튼을 누르면 box1의 너비와 알아서 경고창에 띄우기
+		$("#btn3").on("click",function(){
+			var wid = $("#box1").css("width");
+			var hgt = $("#box1").css("height");
+
+			alert(wid+","+hgt);
+		})
+
+		//4번 버튼을 누르면 box1의 myStyle 클래스 부여하기
+		$("#btn4").on("click",function(){
+			$("#box1").addClass("myStyle");
+		})
+
+		//5번 버튼을 누르면 box1의 myStyle 클래스 제거하기
+		$("#btn5").on("click",function(){
+			$("#box1").toggleClass("myStyle");
+		})//toggleClass : 클래스 부여와 제거가 모두가능
+
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="btn1" id="btn1">
+	<input type="button" value="btn2" id="btn2">
+	<input type="button" value="btn3" id="btn3">
+	<input type="button" value="btn4" id="btn4">
+	<input type="button" value="btn5" id="btn5">
+	<br />
+	<div id="box1">베컴딸</div>
+	<img src="../images/BABY.jpg" alt="베컴딸" >
+
+</body>
+</html>

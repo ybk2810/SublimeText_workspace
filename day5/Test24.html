@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 본인: name, age, gender 속성으로 갖는
+		// person 객체를 생성하고 콘솔에 출력
+		var person = {
+			name:"KS", age:20, gender:"남", isAdult:function(){
+				var result;
+				if(this.age>18){
+					result = "성인";
+				}else{
+					result = "미성년자";
+				}
+				console.log(this.name + "씨는 " + result + "입니다.");
+			}
+		};
+
+		console.log("-----------------------");
+
+		person.isAdult();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

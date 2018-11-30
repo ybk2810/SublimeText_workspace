@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html24.html</title>
+	<style type="text/css">
+		table{
+			table-layout: auto;
+			width: 75%;
+		}
+		td{
+			color: blue;
+			font-weight: bold;
+		}
+		.selectedStyle{
+			color: blue;
+			font-size: 50px;
+			background-color: deepskyblue;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//두번째 tr만 배경 핑크
+			$("tr:eq(2)").css("backgroundColor","pink");
+			//2번째보다 작은애들 less than
+			$("tr:lt(2)").css("backgroundColor","red");
+			//2번째보다 큰애들 greater than
+			$("tr:gt(2)").css("backgroundColor","blue");
+		})
+	</script>
+</head>
+<body>
+
+	<input type="button" value="버튼1" id="btn1">
+	<input type="button" value="버튼2" id="btn2">
+	<!-- 5행5열 -->
+	<!-- table>(tr>th*5)+(tr>td*5)*4 -->
+	<table>
+		<tr>
+			<th id="id">ID</th>
+			<th id="pw">PW</th>
+			<th id="name">NAME</th>
+			<th id="email">EMAIL</th>
+			<th id="addrs">ADDRS</th>
+		</tr>
+		<tr class="odd">
+			<td>aaa</td>
+			<td>pwd1</td>
+			<td>아이언맨</td>
+			<td>ironman@gmail.com</td>
+			<td>절벽위</td>
+		</tr>
+		<tr class="even">
+			<td>bbb</td>
+			<td>pwd2</td>
+			<td>토르</td>
+			<td>thur@gmail.com</td>
+			<td>아스가르드</td>
+		</tr>
+		<tr class="odd">
+			<td>ccc</td>
+			<td>pwd3</td>
+			<td>스파이더맨</td>
+			<td>spiderman@gmail.com</td>
+			<td>슈퍼맨아랫집</td>
+		</tr>
+		<tr class="even">
+			<td>ddd</td>
+			<td>pwd4</td>
+			<td>앤트맨</td>
+			<td>antman@gmail.com</td>
+			<td>헐크옆집</td>
+		</tr>
+	</table>
+</body>
+</html>

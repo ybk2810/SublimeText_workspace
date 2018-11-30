@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		canvas{
+			background: #aaaaaa;
+		}
+	</style>
+	<script type="text/javascript">
+		//현재창이 로딩된 후에 test함수를 실행시켜
+		window.onload=test;
+
+		function test(){
+			var canvas=document.getElementById("myCanvas");
+			console.log(canvas);
+			//2D 컨텍스트 객체 가져오기
+			var ctx = canvas.getContext("2d");
+			//ctx: 붓
+			//그림그리기 시작
+			ctx.beginPath();
+			//좌표로 이동
+			ctx.moveTo(50,50);
+
+			ctx.lineTo(150,50);
+			ctx.lineTo(50,150);
+			ctx.closePath();
+
+			ctx.fillStyle="yellow";
+			ctx.fillRect(100,100,200,200);
+			ctx.strokeStyle="red";
+
+			ctx.stroke();
+
+			var name = "홍길동";
+
+			ctx.font="20px 고딕";
+			ctx.fillStyle="blue";
+			ctx.fillText("이름: " + name, 10,100);
+		}
+		
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" height="500" width="500"></canvas>
+
+</body>
+</html>

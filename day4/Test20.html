@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function printWhere(){
+			// console.log("adf");
+			var idx = document.frm.where.selectedIndex;
+			if(idx==1){
+				location.href="http://www.burgerking.co.kr";
+			}else if(idx==2){
+				location.href="http://www.momstouch.co.kr";
+			}else if(idx==3){
+				location.href="http://www.mcdonalds.co.kr";
+			}else if(idx==4){
+				location.href="http://www.kfckorea.com";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>오늘은 뭐먹지</h2>
+
+
+	<form action="" name="frm">
+		<select name="where" id="" onchange="printWhere()"> <!-- onchange:다른것을 선택하면 호출되는것 -->
+			<option value="">------</option>
+			<option value="버거왕">버거왕</option>
+			<option value="엄마터치">엄마터치</option>
+			<option value="맥도날드">맥도날드</option>
+			<option value="KFC">KFC</option>
+		</select>
+	</form>
+
+</body>
+</html>

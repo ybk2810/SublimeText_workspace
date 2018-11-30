@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table,td{
+			border: 1px solid red;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		#result{
+			width: 700px;
+			text-align: right;
+			font-size: 15px;
+		}
+		table{
+			width: 800px;
+			margin: 0px auto;
+		}
+		input{
+			width: 100px;
+			height: 50px;
+			border-radius: 5px;
+		}
+		tr{
+		    height: 75px;
+		    font-size: 15px;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		function inputData(x){
+			console.log(x);
+			var result = document.getElementById("result");
+			result.value += x;
+		}
+
+		function cal(){
+			var result = document.getElementById("result");
+			var data = eval(result.value);
+			console.log(data);
+			result.value= result.value + " = " + data;
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" name="" id="result"></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="7" class="btn" onclick="inputData(7)">
+			</td>
+			<td>
+				<input type="button" value="8" class="btn" onclick="inputData(8);">
+			</td>
+			<td>
+				<input type="button" value="9" class="btn" onclick="inputData(9);">
+			</td>
+			<td>
+				<input type="button" value="+" class="btn" onclick="inputData('+');">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="4" class="btn" onclick="inputData(4);">
+			</td>
+			<td>
+				<input type="button" value="5" class="btn" onclick="inputData(5);">
+			</td>
+			<td>
+				<input type="button" value="6" class="btn" onclick="inputData(6);">
+			</td>
+			<td>
+				<input type="button" value="-" class="btn" onclick="inputData('-');">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="1" class="btn" onclick="inputData(1);">
+			</td>
+			<td>
+				<input type="button" value="2" class="btn" onclick="inputData(2);">
+			</td>
+			<td>
+				<input type="button" value="3" class="btn" onclick="inputData(3);">
+			</td>
+			<td>
+				<input type="button" value="*" class="btn" onclick="inputData('*');">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="0" class="btn" onclick="inputData(0);">
+			</td>
+			<td>
+				<input type="button" value="00"class="btn"  onclick="inputData('00');">
+			</td>
+			<td>
+				<input type="button" value="=" class="btn" onclick="cal();">
+			</td>
+			<td>
+				<input type="button" value="/" class="btn" onclick="inputData('/');">
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+	// 오렌지만 배경색을 빨강색
+			$("input[checked='checked']+span").css("backgroundColor","red");
+		})
+	</script>
+</head>
+<body>
+	<!-- 체크가 된 상태로 나오게 하고싶다 : checked -->
+	<div><input type="checkbox" name="fruit" id="" checked="checked">
+		<span>오렌지</span>
+	</div>
+
+	<div><input type="checkbox" name="fruit" id="">
+		<span>포도</span>
+	</div>
+
+	<div><input type="checkbox" name="fruit" id="">
+		<span>딸기</span>
+	</div>
+	
+</body>
+</html>

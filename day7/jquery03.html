@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- css: 네이버의 링크 배경색을 오렌지 색 지정 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">	
+		// window.onload = function(){
+		// 	var naver = document.getElementsByClassName('nhn');
+		// 	for(var i=0; i<naver.length; i++){
+		// 		var item = naver.item(i);
+		// 		item.style.backgroundColor = "orange";
+		// 	}
+		// }
+
+		// $(function(){
+		// 	$(".nhn").css("background","blue");
+		// });
+
+		//클래스가 없다고 가정하고 배경 변경
+		//hint(jquery선택자==>CSS선택자==>emmet단축키)
+		$(function(){
+			$("a[href='http://www.naver.com']").css("background","yellow");
+		});
+	</script>
+</head>
+<body>
+ 	<a class="nhn" href="http://www.naver.com">네이버</a>
+	<a class="nhn" href="http://www.naver.com">네이버</a>
+	<a class="google" href="http://www.google.com">구글</a>
+	<a class="google" href="http://www.google.com">구글</a>
+	
+	
+
+</body>
+</html>

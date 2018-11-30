@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: auto;
+			padding: 0px;
+		}
+		canvas{
+			backround: #aaaaaa;
+		}</style>
+	<script type="text/javascript">
+		//이미지 객체
+		var bgImg1 = new Image();
+		bgImg1.src = "../images/bg1.jpg";
+		var bgImg2 = new Image();
+		bgImg2.src = "../images/bg2.jpg";
+		var endImg = new Image();
+		endImg.src = "../images/End.gif";
+
+		var cat1 = new Image();
+		cat1.src = "../images/run1.png";
+		var cat2 = new Image();
+		cat2.src = "../images/run2.png";
+		var cat3 = new Image();
+		cat3.src = "../images/run3.png";
+
+		//토끼 좌표 객체
+		var catX = 100;
+		var catY = 400;
+
+		// 배경 x 좌표
+		var bgX1 = 0;
+		var bgX2 = 800;
+
+		var ctx;
+		var counter = 0;
+		var cntMove = 0;
+		var distance;
+		var name = "김영복";
+		var score = 0;
+		var isMove = false;
+		var reactionY = 0;
+		var dropX = 1200;
+		var isDrop = false;
+
+		// 익명 함수
+		window.onload = function() {
+			// console.log("ㅎㅎㅎ");
+			var canvas = document.getElementById("myCanvas");
+			ctx = canvas.getContext("2d");
+			
+			var body = document.body;
+			console.dir(body);
+			body.onkeydown=moveCat;
+
+			drawScreen();
+		}
+
+		function drawScreen(){
+			counter++;
+			bgX1--;
+			bgX2--;
+			dropX--;
+			bgX1--;
+			bgX2--;
+			dropX--;
+
+			if(isMove==true){
+				cntMove++;
+				if(cntMove==251){
+					cntMove = 0;
+					reactionY = 0;
+					isMove = false;
+				}else if(cntMove<=125){
+					reactionY += 2;
+				}else if(cntMove>125){
+					reactionY -= 2;
+				} 
+			}
+
+			distance = pythagoras(catX-50, catY-reactionY-50, dropX, catY-50);
+
+			if(distance<100){
+				isDrop=true;
+			}
+
+			if(isDrop==true){
+				isMove = false;
+				reactionY -= 5;
+				if(reactionY<-300){
+
+					ctx.drawImage(EndImg,130,300,540,100);
+					gameOver();
+				}
+			}
+
+
+			//ctx.drawImage(그릴객체,x,y,너비,높이);
+			ctx.drawImage(bgImg1,bgX1,0,800,600);
+			ctx.drawImage(bgImg2,bgX2,0,800,600);
+			if(bgX1 == -800){
+				bgX1 = 800;
+			}else if(bgX2 == -800){
+				bgX2 = 800;
+				dropX = 1200;
+			}
+
+			if(counter%3 == 0){
+				ctx.drawImage(cat1, catX-50, catY-reactionY-50, 100, 100);
+			}else if(counter%3 == 1){
+				ctx.drawImage(cat2, catX-50, catY-reactionY-50, 100, 100);
+			}else if(counter%3 == 2){
+				ctx.drawImage(cat3, catX-50, catY-reactionY-50, 100, 100);
+				counter=0;
+			}
+
+			ctx.font = "30px 고딕";
+			ctx.fillStyle = "white";
+			ctx.fillText("이름: " + name + ", SCORE: " + score, 250, 50);
+
+			setTimeout(drawScreen,10);
+		}
+
+		function pythagoras(x1, y1, x2, y2){
+			return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+		}
+
+		function moveCat(event){
+			if(event.keyCode==32){
+				if(isMove) return;
+				isMove=true;
+			}
+		}
+
+		function gameOver(){
+
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="800" height="600"></canvas>
+	<br/>
+
+</body>
+</html>

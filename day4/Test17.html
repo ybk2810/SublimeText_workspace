@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		// 1부터 10사이의 랜덤 정수값을 구한다.
+		var value = Math.floor(Math.random()*11)//0부터 10보다 작은 정수의 값을 랜덤 출력
+
+		// 브라우저에 img태그 형태로 출력
+		var data = "<img src='../images/movie_image"+value+".jpg'>";
+		document.write(data);
+
+		// img태그에 속성을 잘 사용하면 이미지 변경할 수 있다.
+
+
+	</script>
+</head>
+<body>
+
+	<!-- 실행할때마다랜덤하게 영화포스터출력 -->
+	<!-- 300,300크기의 영화포스터랜덤하게출력 -->
+	<!-- math.floor(3.7) : 3.7을넘지않는 가장큰 정수 -->
+
+
+</body>
+</html>

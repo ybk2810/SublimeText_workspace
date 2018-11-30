@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: auto;
+			padding: 0px;
+		}
+		#myCanvas{
+			background: #aaaaaa;
+		}
+	</style>
+	<script type="text/javascript">
+		var ctx;
+		var counter=0;
+
+		// 배경 x 좌표
+		var bgY1 = 0;
+		var bgY2 = -800;
+
+		//
+		var gunShipX = 300;
+		var gunShipY = 300;
+
+		//이미지 객체
+		var bgImg = new Image();
+		bgImg.src = "../images/space.jpg";
+
+		//캐릭터 비행기 이미지
+		var gunShip1 = new Image();
+		gunShip1.src = "../images/gunship4.png";
+		var gunShip2 = new Image();
+		gunShip2.src = "../images/gunship5.png";
+		var gunShip3 = new Image();
+		gunShip3.src = "../images/gunship6.png";
+		var gunShip4 = new Image();
+		gunShip4.src = "../images/gunship7.png";
+
+		//적비행기
+		var enemyShip1 = new Image();
+		enemyShip1.src = "../images/gunship0.png";
+		var enemyShip2 = new Image();
+		enemyShip2.src = "../images/gunship1.png";
+		var enemyShip3 = new Image();
+		enemyShip3.src = "../images/gunship2.png";
+		var enemyShip4 = new Image();
+		enemyShip4.src = "../images/gunship3.png";
+
+		//마사일
+		var missile = new Image();
+		missile.src = "../images/missile.png";
+
+		window.onload=function(){
+			var canvas = document.getElementById("myCanvas");
+
+			canvas.onmousemove = moveGunShip;
+
+			ctx = canvas.getContext("2d");
+			
+			setInterval(drawScreen,50);
+		}
+
+		function moveGunShip(){
+			gunShipX = event.pageX;
+			gunShipY = event.pageY;
+		}
+
+		function drawScreen(){
+			counter++;
+			bgY1+=3;
+			bgY2+=3;
+
+			ctx.drawImage(bgImg,0,bgY1,600,800);
+			ctx.drawImage(bgImg,0,bgY2,600,800);
+			if(bgY1 >= 800){
+				bgY1 = -800;
+				bgY2 = 0;
+			}else if(bgY2 >= 800){
+				bgY1 = 0;
+				bgY2 = -800;
+			}
+
+			//비행기 그리기
+			if(counter%4==0)ctx.drawImage(gunShip1,gunShipX-25,gunShipY-25,50,50);
+			else if(counter%4==1)ctx.drawImage(gunShip2,gunShipX-25,gunShipY-25,50,50);
+			else if(counter%4==2)ctx.drawImage(gunShip3,gunShipX-25,gunShipY-25,50,50);
+			else if(counter%4==3)ctx.drawImage(gunShip4,gunShipX-25,gunShipY-25,50,50);
+			
+			//적비행기 그리기
+			if(counter%4==0)ctx.drawImage(enemyShip1,300,200,50,50);
+			else if(counter%4==1)ctx.drawImage(enemyShip2,300,200,50,50);
+			else if(counter%4==2)ctx.drawImage(enemyShip3,300,200,50,50);
+			else if(counter%4==3)ctx.drawImage(enemyShip4,300,200,50,50);
+		}
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="600" height="800"></canvas>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>"="눌러서 덧셈값 출력하기</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		//자바스크립트로 표현
+		// window.onload=function(){
+		// 	var btn = document.getElementById("btn")
+		// 	btn.onclick = test;
+		// }
+		// function test(){
+		// 	console.log("눌림");
+		// }
+		
+		$(function(){
+		$("#btn").on("click",function(){
+			// console.log($("#num1").val());
+			// var text1 = parseInt($("#num1").val());
+			// var text2 = parseInt($("#num2").val());
+			// console.log(parseInt(text1+text2));
+
+			
+			// $("num1").val("999"); 버튼을누르면999를 num1텍스트에출력 
+			$("#result").val(parseInt($("#num1").val())+parseInt($("#num2").val()));
+
+		})
+	})
+
+
+	</script>
+</head>
+<body>
+	<!-- 3+2=5만들기 -->
+	<!-- input:text#num1+input:text#num2+input:button#btn+input:text#num3 -->
+	<input type="text" name="" id="num1">
+	+
+	<input type="text" name="" id="num2">
+	<input type="button" value="=" id="btn">
+	<input type="text" name="" id="result">
+
+</body>
+</html>
